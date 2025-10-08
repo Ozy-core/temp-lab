@@ -1,5 +1,8 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
+#include <functional>
+#include <cassert>
 
 using namespace std;
 
@@ -42,5 +45,6 @@ int main()
 {
     function<int(T)> f= [](T x){return x*2};
     function<bool(T)> p= [](T x){return x>100};
+
 
 }
