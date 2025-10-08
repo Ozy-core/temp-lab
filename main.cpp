@@ -7,12 +7,12 @@
 using namespace std;
 
 template <class T>
-T vec_fill(T elem)
+vector<T> vec_fill(T elem)
 {
-    vector<int> vec;
+    vector<T> vec;
     while (vec.size()!= 10)
     {
-        vec.push_front(elem);
+        vec.push_back(elem);
         elem++;
     }
     return vec;
@@ -23,28 +23,34 @@ T until(T elem,function<T(T)> func, function<bool(T)> predicate)
 {
     while(!predicate(elem))
     {
-        elem= f(elem);
+        elem= func(elem);
     }
     return elem;
 }
 
 template <class T>
-T order(T& a, T& b, T& c)
+void order(T& a, T& b, T& c)
 {
     vector<T> vec= {a,b,c};
-    sort.(vec.begin(),vec.end(), greater(T));
+    sort(vec.begin(),vec.end(), greater<T>());
     for(T x: vec)
     {
         cout << x << endl;
     }
-    return 0
 }
 
-template <typename T>
+
 int main()
 {
-    function<int(T)> f= [](T x){return x*2};
-    function<bool(T)> p= [](T x){return x>100};
+    function<int(int)> f= [](int x){return x*2;};
+    function<bool(int)> p= [](int x){return x>100;};
 
+    vector<int> filled= vec_fill(5);
+    assert(filled.size()==10);
+    assert(filled.front()==5);
+    assert(filled.back()==5+9);
 
+    cout<<"passed!"<<endl;
+
+    return 0;
 }
