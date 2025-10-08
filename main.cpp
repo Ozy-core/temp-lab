@@ -33,6 +33,9 @@ void order(T& a, T& b, T& c)
 {
     vector<T> vec= {a,b,c};
     sort(vec.begin(),vec.end(), greater<T>());
+    a=vec[0];
+    b=vec[1];
+    c=vec[2];
     for(T x: vec)
     {
         cout << x << endl;
@@ -50,7 +53,22 @@ int main()
     assert(filled.front()==5);
     assert(filled.back()==5+9);
 
-    cout<<"passed!"<<endl;
+    cout<<"passed! Level 1 done--> next"<<endl;
 
+    int result= until(3,f,p);
+    assert(result== 192);
+
+    cout<<"passed! Level 2 done--> next" << endl;
+
+    int x=10;
+    int y=6;
+    int z=19;
+
+    order(x,y,z);
+    assert(x==19);
+    assert(y==10);
+    assert(z==6);
+
+    cout<<"passed! Level 3 done!! yay" << endl;
     return 0;
 }
